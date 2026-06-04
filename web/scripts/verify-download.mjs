@@ -5,7 +5,9 @@ import { fileURLToPath } from 'node:url'
 
 import { webkit } from 'playwright'
 
-const good = fileURLToPath(new URL('../../.playwright-mcp/fixtures/cjai-good.xlsx', import.meta.url))
+const good = fileURLToPath(
+  new URL('../../.playwright-mcp/fixtures/cjai-good.xlsx', import.meta.url),
+)
 const out = fileURLToPath(new URL('../../.playwright-mcp/webkit-download.xlsx', import.meta.url))
 
 const browser = await webkit.launch()
