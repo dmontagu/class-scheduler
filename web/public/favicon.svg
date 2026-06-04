@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Class Scheduler">
+  <rect width="32" height="32" rx="7.5" fill="#1f6b50" />
+  <!-- binding posts -->
+  <rect x="10.4" y="5.4" width="2.3" height="5" rx="1.15" fill="#f4f1e8" />
+  <rect x="19.3" y="5.4" width="2.3" height="5" rx="1.15" fill="#f4f1e8" />
+  <!-- calendar card -->
+  <rect x="6.5" y="9" width="19" height="16" rx="3" fill="#f4f1e8" />
+  <!-- header rule -->
+  <path d="M6.5 14 H25.5" stroke="#1f6b50" stroke-width="1.4" />
+  <!-- days -->
+  <g fill="#1f6b50">
+    <circle cx="11" cy="18.4" r="1.25" />
+    <circle cx="15.8" cy="18.4" r="1.25" />
+    <circle cx="11" cy="22.2" r="1.25" />
+  </g>
+  <!-- a scheduled day -->
+  <circle cx="20.4" cy="21.3" r="2.1" fill="#b8791b" />
+</svg>
