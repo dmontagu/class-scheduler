@@ -1,0 +1,25 @@
+v# Works with both `pre-commit` and `prek`.
+# Python is linted/formatted with ruff (via uv); the web app is checked with its
+# own toolchain. Local/system hooks keep everything self-contained (no pinned
+# external hook repos to drift).
+default_install_hook_types: [pre-commit]
+
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff (python lint)
+        language: system
+        entry: uv run ruff check --fix
+        types: [python]
+      - id: ruff-format
+        name: ruff format (python)
+        language: system
+        entry: uv run ruff format
+        types: [python]
+      - id: web-check
+        name: web format/lint/typecheck
+        language: system
+        files: ^web/.*\.(ts|tsx|js|json)$
+        pass_filenames: false
+        entry: bash -c 'cd web && pnpm run format:check && pnpm run lint && pnpm run typecheck'

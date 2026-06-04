@@ -1,0 +1,37 @@
+[project]
+name = "cjai"
+version = "0.1.0"
+description = "Tooling to help middle school staff with class assignment / student selection"
+readme = "README.md"
+authors = [{ name = "Class Scheduler contributors" }]
+requires-python = ">=3.12"
+dependencies = [
+    "openpyxl>=3.1.5",
+]
+
+[project.scripts]
+cjai = "cjai.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
